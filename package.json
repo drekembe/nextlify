@@ -7,15 +7,18 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next build && next export"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.2.2",
+    "@next/mdx": "^9.0.3",
     "next": "^9.0.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.1",
-    "@types/react": "^16.9.1"
+    "@types/react": "^16.9.1",
+    "frontmatter-markdown-loader": "^1.8.0"
   }
 }
