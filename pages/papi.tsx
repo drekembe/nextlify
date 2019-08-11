@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NextPage } from 'next'
 import content from '../content/home.md'
 import { useObserver, useLocalStore } from 'mobx-react-lite'
+import fetch from 'isomorphic-unfetch'
 import { observable } from 'mobx'
 
 interface CatPage {
@@ -31,8 +32,16 @@ const Papi: NextPage<{}> = () => {
     },
     get bigName() {
       return m.value.toUpperCase()
-    }
+    },
+    setCard: card => { store.card = card },
+    card: undefined as any
   }))
+  const f = async () => {
+    const resp = await fetch('https://api.scryfall.com/cards/random')
+    const data = await resp.json()
+    store.setCard(data)
+  }
+  useEffect(() => { f() }, [])
   return useObserver(() =>
     <article>
       <h1>{title}</h1>
@@ -48,6 +57,9 @@ const Papi: NextPage<{}> = () => {
           </li>
         ))}
       </ul>
+      <div>
+        {store.card && store.card.image_uris && <img src={store.card.image_uris.normal} alt="card" />}
+      </div>
     </article>
   )
 }
