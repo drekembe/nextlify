@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^12.7.1",
     "@types/react": "^16.9.1",
-    "frontmatter-markdown-loader": "^1.8.0"
+    "frontmatter-markdown-loader": "^1.8.0",
+    "typescript": "^3.5.3"
   }
 }
