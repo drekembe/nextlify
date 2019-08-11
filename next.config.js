@@ -5,7 +5,9 @@ const withMDX = require('@next/mdx')({
 module.exports = {
   exportPathMap: function () {
     return {
-      '/': { page: '/' }
+      '/': { page: '/' },
+      '/papi': { page: '/papi' },
+      'hapi': { page: '/papi' }
     };
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
