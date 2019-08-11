@@ -16,3 +16,5 @@ cats:
 THis is something okay whatever.
 
 This page is built with NextJS, and content is managed in Netlify CMS
+
+![ayyy lmao](/static/img/0.jpeg "lmao")
