@@ -41,7 +41,9 @@ const Papi: NextPage<{}> = () => {
     const data = await resp.json()
     store.setCard(data)
   }
-  useEffect(() => { f() }, [])
+  useEffect(() => { 
+    f();
+  }, [])
   return useObserver(() =>
     <article>
       <h1>{title}</h1>
